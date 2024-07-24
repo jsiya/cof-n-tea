@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CofNTea.Domain\CofNTea.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="DTOs\AppUserDtos\" />
+      <Folder Include="DTOs\MenuItemDtos\" />
+      <Folder Include="DTOs\PurchaseDtos\" />
+      <Folder Include="DTOs\ReviewDtos\" />
+      <Folder Include="DTOs\RewardDtos\" />
+      <Folder Include="Utilities\Profiles\" />
+    </ItemGroup>
+
+</Project>

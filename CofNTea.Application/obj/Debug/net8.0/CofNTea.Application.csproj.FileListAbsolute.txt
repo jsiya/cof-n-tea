@@ -1,0 +1,15 @@
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/bin/Debug/net8.0/CofNTea.Application.deps.json
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/bin/Debug/net8.0/CofNTea.Application.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/bin/Debug/net8.0/CofNTea.Application.pdb
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/bin/Debug/net8.0/CofNTea.Domain.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/bin/Debug/net8.0/CofNTea.Domain.pdb
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/CofNTea.Application.csproj.AssemblyReference.cache
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/CofNTea.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/CofNTea.Application.AssemblyInfoInputs.cache
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/CofNTea.Application.AssemblyInfo.cs
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/CofNTea.Application.csproj.CoreCompileInputs.cache
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/CofNTea..F55CF08E.Up2Date
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/CofNTea.Application.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/refint/CofNTea.Application.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/CofNTea.Application.pdb
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/ref/CofNTea.Application.dll

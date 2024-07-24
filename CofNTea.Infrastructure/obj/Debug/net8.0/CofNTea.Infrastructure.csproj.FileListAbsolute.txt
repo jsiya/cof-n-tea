@@ -1,0 +1,17 @@
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/bin/Debug/net8.0/CofNTea.Infrastructure.deps.json
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/bin/Debug/net8.0/CofNTea.Infrastructure.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/bin/Debug/net8.0/CofNTea.Infrastructure.pdb
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/bin/Debug/net8.0/CofNTea.Application.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/bin/Debug/net8.0/CofNTea.Domain.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/bin/Debug/net8.0/CofNTea.Application.pdb
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/bin/Debug/net8.0/CofNTea.Domain.pdb
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/obj/Debug/net8.0/CofNTea.Infrastructure.csproj.AssemblyReference.cache
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/obj/Debug/net8.0/CofNTea.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/obj/Debug/net8.0/CofNTea.Infrastructure.AssemblyInfoInputs.cache
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/obj/Debug/net8.0/CofNTea.Infrastructure.AssemblyInfo.cs
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/obj/Debug/net8.0/CofNTea.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/obj/Debug/net8.0/CofNTea..EDCAE0C0.Up2Date
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/obj/Debug/net8.0/CofNTea.Infrastructure.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/obj/Debug/net8.0/refint/CofNTea.Infrastructure.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/obj/Debug/net8.0/CofNTea.Infrastructure.pdb
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Infrastructure/obj/Debug/net8.0/ref/CofNTea.Infrastructure.dll

@@ -1,0 +1,12 @@
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/bin/Debug/net8.0/CofNTea.Domain.deps.json
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/bin/Debug/net8.0/CofNTea.Domain.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/bin/Debug/net8.0/CofNTea.Domain.pdb
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/CofNTea.Domain.csproj.AssemblyReference.cache
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/CofNTea.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/CofNTea.Domain.AssemblyInfoInputs.cache
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/CofNTea.Domain.AssemblyInfo.cs
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/CofNTea.Domain.csproj.CoreCompileInputs.cache
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/CofNTea.Domain.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/refint/CofNTea.Domain.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/CofNTea.Domain.pdb
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/ref/CofNTea.Domain.dll

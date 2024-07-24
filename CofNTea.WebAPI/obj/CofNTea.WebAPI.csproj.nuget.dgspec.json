@@ -1,0 +1,296 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.WebAPI/CofNTea.WebAPI.csproj": {}
+  },
+  "projects": {
+    "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/CofNTea.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/CofNTea.Application.csproj",
+        "projectName": "CofNTea.Application",
+        "projectPath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/CofNTea.Application.csproj",
+        "packagesPath": "/Users/siyajabbarova/.nuget/packages/",
+        "outputPath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/siyajabbarova/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/CofNTea.Domain.csproj": {
+                "projectPath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/CofNTea.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/CofNTea.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/CofNTea.Domain.csproj",
+        "projectName": "CofNTea.Domain",
+        "projectPath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/CofNTea.Domain.csproj",
+        "packagesPath": "/Users/siyajabbarova/.nuget/packages/",
+        "outputPath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/siyajabbarova/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Persistence/CofNTea.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Persistence/CofNTea.Persistence.csproj",
+        "projectName": "CofNTea.Persistence",
+        "projectPath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Persistence/CofNTea.Persistence.csproj",
+        "packagesPath": "/Users/siyajabbarova/.nuget/packages/",
+        "outputPath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/siyajabbarova/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/CofNTea.Application.csproj": {
+                "projectPath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/CofNTea.Application.csproj"
+              },
+              "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/CofNTea.Domain.csproj": {
+                "projectPath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/CofNTea.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.WebAPI/CofNTea.WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.WebAPI/CofNTea.WebAPI.csproj",
+        "projectName": "CofNTea.WebAPI",
+        "projectPath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.WebAPI/CofNTea.WebAPI.csproj",
+        "packagesPath": "/Users/siyajabbarova/.nuget/packages/",
+        "outputPath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.WebAPI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/siyajabbarova/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Persistence/CofNTea.Persistence.csproj": {
+                "projectPath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Persistence/CofNTea.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
