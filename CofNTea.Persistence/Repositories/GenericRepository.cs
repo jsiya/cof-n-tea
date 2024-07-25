@@ -19,7 +19,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T: class, IBaseE
     }
     public async Task<IEnumerable<T>> GetAllAsync()
     {
-        return _table;
+        return _table.ToList();
     }
 
     public async Task<IQueryable<T>> GetByExpressionAsync(Expression<Func<T, bool>> expression)

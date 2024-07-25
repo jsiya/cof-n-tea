@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Bb5/1OgCjmU0T9v48dIJXuGDa1GqHeVHq1ssH82jHVmTfxipFVsDZmND0YkIxlx1W1ijpZUPfxYikhVNVMTkEw==",
+  "dgSpecHash": "Tzzhz26oJ+NDQZkp2TjeXufgFyjLuqpqZCbbVseOCIDvmCrnBikfloz3Y73uQw3oR8eQQ88ltFovHdD8KCaNZA==",
   "success": true,
   "projectFilePath": "/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Persistence/CofNTea.Persistence.csproj",
   "expectedPackageFiles": [
+    "/Users/siyajabbarova/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/siyajabbarova/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/siyajabbarova/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
     "/Users/siyajabbarova/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
@@ -35,7 +36,7 @@
     "/Users/siyajabbarova/.nuget/packages/microsoft.extensions.configuration.fileextensions/8.0.0/microsoft.extensions.configuration.fileextensions.8.0.0.nupkg.sha512",
     "/Users/siyajabbarova/.nuget/packages/microsoft.extensions.configuration.json/8.0.0/microsoft.extensions.configuration.json.8.0.0.nupkg.sha512",
     "/Users/siyajabbarova/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
-    "/Users/siyajabbarova/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/Users/siyajabbarova/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.1/microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
     "/Users/siyajabbarova/.nuget/packages/microsoft.extensions.dependencymodel/8.0.0/microsoft.extensions.dependencymodel.8.0.0.nupkg.sha512",
     "/Users/siyajabbarova/.nuget/packages/microsoft.extensions.fileproviders.abstractions/8.0.0/microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
     "/Users/siyajabbarova/.nuget/packages/microsoft.extensions.fileproviders.physical/8.0.0/microsoft.extensions.fileproviders.physical.8.0.0.nupkg.sha512",

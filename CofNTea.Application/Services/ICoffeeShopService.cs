@@ -5,7 +5,7 @@ namespace CofNTea.Application.Services;
 
 public interface ICoffeeShopService
 {
-    Task<IEnumerable<CoffeeShop>> GetAllCoffeeShops();
+    Task<IEnumerable<CoffeeShopGetDto>> GetAllCoffeeShops();
     Task<IQueryable<CoffeeShop>> GetCoffeeShopById(int coffeeShopId);
     Task CreateCoffeeShop(CoffeeShopDetailsDto coffeeShopDetailsDto);
     Task SoftDeleteCoffeeShopById(int coffeeShopId);

@@ -1,8 +1,11 @@
+using System.Reflection;
 using CofNTea.Application;
 using CofNTea.Application.Repositories;
 using CofNTea.Application.Services;
+using CofNTea.Application.Utilities.AutoMapper;
 using CofNTea.Persistence.DbContexts;
 using CofNTea.Persistence.Repositories;
+using CofNTea.Persistence.Utilities.AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +26,8 @@ public static class RegisterServices
         });
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddSingleton<IMapper, Mapper>();
+        //services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddScoped<IAppUserRepository, AppUserRepository>();
         services.AddScoped<ICoffeeShopRepository, CoffeeShopRepository>();

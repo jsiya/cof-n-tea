@@ -17,3 +17,4 @@
 /Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Persistence/obj/Debug/net8.0/ref/CofNTea.Persistence.dll
 /Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Persistence/bin/Debug/net8.0/CofNTea.Application.dll
 /Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Persistence/bin/Debug/net8.0/CofNTea.Application.pdb
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Persistence/obj/Debug/net8.0/CofNTea.Persistence.sourcelink.json

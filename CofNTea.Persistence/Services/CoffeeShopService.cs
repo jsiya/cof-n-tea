@@ -1,6 +1,7 @@
 using CofNTea.Application;
 using CofNTea.Application.DTOs.CoffeeShopDtos;
 using CofNTea.Application.Services;
+using CofNTea.Application.Utilities.AutoMapper;
 using CofNTea.Domain.Entities.Concretes;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,16 +9,23 @@ namespace CofNTea.Persistence.Services;
 
 public class CoffeeShopService: ICoffeeShopService
 {
-    private IUnitOfWork _unitOfWork;
+    private readonly IUnitOfWork _unitOfWork;
+    private readonly IMapper _mapper;
 
-    public CoffeeShopService(IUnitOfWork unitOfWork)
+    public CoffeeShopService(IUnitOfWork unitOfWork, IMapper mapper)
     {
         _unitOfWork = unitOfWork;
+        _mapper = mapper;
     }
 
-    public async Task<IEnumerable<CoffeeShop>> GetAllCoffeeShops()
+    public async Task<IEnumerable<CoffeeShopGetDto>> GetAllCoffeeShops()
     {
-        return await _unitOfWork.GetRepository<CoffeeShop>().GetAllAsync();
+        var coffeeShops =  await _unitOfWork.GetRepository<CoffeeShop>().GetAllAsync();
+
+        IEnumerable<CoffeeShopGetDto> coffeeShopGetDtos = new List<CoffeeShopGetDto>();
+
+        var map = _mapper.Map<CoffeeShopGetDto, CoffeeShop>((IList<CoffeeShop>)coffeeShops);
+        return map;
     }
 
     public async Task<IQueryable<CoffeeShop>> GetCoffeeShopById(int coffeeShopId)

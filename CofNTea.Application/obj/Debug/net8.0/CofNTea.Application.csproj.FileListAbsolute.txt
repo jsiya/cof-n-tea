@@ -13,3 +13,4 @@
 /Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/refint/CofNTea.Application.dll
 /Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/CofNTea.Application.pdb
 /Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/ref/CofNTea.Application.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Application/obj/Debug/net8.0/CofNTea.Application.sourcelink.json

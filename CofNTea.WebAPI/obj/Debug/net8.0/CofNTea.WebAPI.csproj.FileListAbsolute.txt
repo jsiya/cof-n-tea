@@ -149,3 +149,6 @@
 /Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.WebAPI/bin/Debug/net8.0/CofNTea.Domain.pdb
 /Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.WebAPI/bin/Debug/net8.0/CofNTea.Application.dll
 /Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.WebAPI/bin/Debug/net8.0/CofNTea.Application.pdb
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.WebAPI/bin/Debug/net8.0/AutoMapper.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.WebAPI/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.WebAPI/obj/Debug/net8.0/CofNTea.WebAPI.sourcelink.json

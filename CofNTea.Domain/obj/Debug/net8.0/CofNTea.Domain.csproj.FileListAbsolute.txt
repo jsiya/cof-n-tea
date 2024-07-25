@@ -10,3 +10,4 @@
 /Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/refint/CofNTea.Domain.dll
 /Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/CofNTea.Domain.pdb
 /Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/ref/CofNTea.Domain.dll
+/Users/siyajabbarova/RiderProjects/cof-n-tea/CofNTea.Domain/obj/Debug/net8.0/CofNTea.Domain.sourcelink.json
