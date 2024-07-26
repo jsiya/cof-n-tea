@@ -10,7 +10,7 @@ public interface IGenericRepository<T> where T: class, IBaseEntity
     Task AddAsync(T entity);
     Task AddRangeAsync(IEnumerable<T> entities);
     Task UpdateAsync(T entity);
-    Task DeleteAsync(T entity);
+    Task HardDeleteAsync(T entity);
     Task SoftDeleteAsync(T entity); 
     Task SaveChangeAsync();
 }

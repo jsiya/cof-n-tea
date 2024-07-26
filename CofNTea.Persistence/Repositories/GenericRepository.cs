@@ -41,7 +41,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T: class, IBaseE
         _table.Update(entity);
     }
     
-    public async Task DeleteAsync(T entity)
+    public async Task HardDeleteAsync(T entity)
     {
         _table.Remove(entity);
     }

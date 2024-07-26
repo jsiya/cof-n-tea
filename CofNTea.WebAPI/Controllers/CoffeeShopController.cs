@@ -33,4 +33,18 @@ public class CoffeeShopController: ControllerBase
     }
     
     
+    [HttpDelete("DeleteCoffeeShopById/{id}")]
+    public async Task<IActionResult> DeleteCoffeeShop(int id)
+    {
+        await _coffeeShopService.SoftDeleteCoffeeShopById(id);
+        return StatusCode(204);
+    }
+
+    [HttpPut("UpdateCategoryById/{id}")]
+    public async Task<IActionResult> UpdateCategoryById(int id, [FromBody] CoffeeShopDetailsDto coffeeShopDetailsDto)
+    {
+        await _coffeeShopService.UpdateCoffeeShop(coffeeShopDetailsDto, id);
+        return Ok();
+    }
+    
 }

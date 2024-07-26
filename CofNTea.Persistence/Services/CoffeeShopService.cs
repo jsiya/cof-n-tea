@@ -21,57 +21,60 @@ public class CoffeeShopService: ICoffeeShopService
     public async Task<IEnumerable<CoffeeShopGetDto>> GetAllCoffeeShops()
     {
         var coffeeShops =  await _unitOfWork.GetRepository<CoffeeShop>().GetAllAsync();
-
-        IEnumerable<CoffeeShopGetDto> coffeeShopGetDtos = new List<CoffeeShopGetDto>();
-
         var map = _mapper.Map<CoffeeShopGetDto, CoffeeShop>((IList<CoffeeShop>)coffeeShops);
         return map;
     }
 
-    public async Task<IQueryable<CoffeeShop>> GetCoffeeShopById(int coffeeShopId)
+    public async Task<CoffeeShopDetailsDto> GetCoffeeShopById(int coffeeShopId)
     {
-        return await _unitOfWork.GetRepository<CoffeeShop>().GetByExpressionAsync(c => c.Id == coffeeShopId);
+        var query = await _unitOfWork.GetRepository<CoffeeShop>().GetByExpressionAsync(c => c.Id == coffeeShopId);
+        var coffeeShop = await query.FirstOrDefaultAsync();
+        if (coffeeShop != null)
+        {
+            var map = _mapper.Map<CoffeeShopDetailsDto, CoffeeShop>(coffeeShop);
+            return map;
+        }
+        return null;
     }
 
     public async Task CreateCoffeeShop(CoffeeShopDetailsDto coffeeShopDetailsDto)
     {
-        var coffeeShop = new CoffeeShop()
-        {
-            Name = coffeeShopDetailsDto.Name,
-            Address = coffeeShopDetailsDto.Address,
-            ImageUrl = coffeeShopDetailsDto.ImageUrl,
-            Latitude = coffeeShopDetailsDto.Latitude,
-            Longitude = coffeeShopDetailsDto.Longitude
-        };
-        await _unitOfWork.GetRepository<CoffeeShop>().AddAsync(coffeeShop);
-         _unitOfWork.SaveChanges();
+        var map = _mapper.Map<CoffeeShop, CoffeeShopDetailsDto>(coffeeShopDetailsDto);
+        await _unitOfWork.GetRepository<CoffeeShop>().AddAsync(map);
+        _unitOfWork.SaveChanges();
     }
 
     public async Task SoftDeleteCoffeeShopById(int coffeeShopId)
     {
-        var coffeeShop = _unitOfWork.GetRepository<CoffeeShop>()
-            .GetByExpressionAsync(c => c.Id == coffeeShopId)
-            .Result
-            .FirstOrDefaultAsync()
-            .Result;
+        var query = await _unitOfWork.GetRepository<CoffeeShop>().GetByExpressionAsync(c => c.Id == coffeeShopId);
+        var coffeeShop = await query.FirstOrDefaultAsync();
         if (coffeeShop != null)
-            coffeeShop.IsActive = false;
-        _unitOfWork.SaveChanges();
+        {
+            await _unitOfWork.GetRepository<CoffeeShop>().SoftDeleteAsync(coffeeShop);
+            _unitOfWork.SaveChanges();
+        }
     }
 
     public async Task HardDeleteCoffeeShopById(int coffeeShopId)
     {
-        var query =  _unitOfWork.GetRepository<CoffeeShop>()
-                                                    .GetByExpressionAsync(c => c.Id == coffeeShopId)
-                                                    .Result;
+        var query = await _unitOfWork.GetRepository<CoffeeShop>().GetByExpressionAsync(c => c.Id == coffeeShopId);
         var deletedItem = await query.FirstOrDefaultAsync();
         if (deletedItem is not null)
-            await _unitOfWork.GetRepository<CoffeeShop>().DeleteAsync(deletedItem);
-        _unitOfWork.SaveChanges();
+        {
+            await _unitOfWork.GetRepository<CoffeeShop>().HardDeleteAsync(deletedItem);
+            _unitOfWork.SaveChanges();
+        }
     }
 
-    public Task UpdateCoffeeShop(CoffeeShop appUser)
+    public async Task UpdateCoffeeShop(CoffeeShopDetailsDto coffeeShopDetailsDto, int id)
     {
-        throw new NotImplementedException();
+        var query = await _unitOfWork.GetRepository<CoffeeShop>().GetByExpressionAsync(c => c.Id == id);
+        var coffeeShop = await query.FirstOrDefaultAsync();
+        if (coffeeShop is not null)
+        {
+            coffeeShop = _mapper.Map<CoffeeShop, CoffeeShopDetailsDto>(coffeeShopDetailsDto);
+            await _unitOfWork.GetRepository<CoffeeShop>().UpdateAsync(coffeeShop);
+            _unitOfWork.SaveChanges();
+        }
     }
 }
