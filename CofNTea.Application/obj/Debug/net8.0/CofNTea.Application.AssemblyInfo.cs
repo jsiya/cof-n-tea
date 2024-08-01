@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CofNTea.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+069e3b550934b53b8493373aa7173a16cd6d150f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e5241a86b014f483f43bb070b05aac60304ac52")]
 [assembly: System.Reflection.AssemblyProductAttribute("CofNTea.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CofNTea.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

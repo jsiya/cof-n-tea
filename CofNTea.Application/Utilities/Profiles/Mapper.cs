@@ -6,9 +6,9 @@ using CofNTea.Application.DTOs.ReviewDtos;
 using CofNTea.Application.DTOs.RewardDtos;
 using CofNTea.Domain.Entities.Concretes;
 
-namespace CofNTea.Persistence.Utilities.AutoMapper;
+namespace CofNTea.Application.Utilities.Profiles;
 
-public class Mapper : Profile
+public class Mapper: Profile
 {
     public Mapper()
     {

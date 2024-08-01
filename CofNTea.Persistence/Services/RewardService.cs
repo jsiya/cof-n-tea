@@ -1,7 +1,7 @@
+using AutoMapper;
 using CofNTea.Application;
 using CofNTea.Application.DTOs.RewardDtos;
 using CofNTea.Application.Services;
-using CofNTea.Application.Utilities.AutoMapper;
 using CofNTea.Domain.Entities.Concretes;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +21,7 @@ public class RewardService: IRewardService
     public async Task<IEnumerable<RewardDetailsDto>> GetAllRewards()
     {
         var rewards =  await _unitOfWork.GetRepository<Reward>().GetAllAsync();
-        var map = _mapper.Map<RewardDetailsDto, Reward>((IList<Reward>)rewards);
+        var map = _mapper.Map<List<RewardDetailsDto>>(rewards);
         return map;
     }
 
@@ -31,7 +31,7 @@ public class RewardService: IRewardService
         var reward = await rewards.FirstOrDefaultAsync();
         if (reward != null)
         {
-            var map = _mapper.Map<RewardDetailsDto, Reward>(reward);
+            var map = _mapper.Map<RewardDetailsDto>(reward);
             return map;
         }
         return null;
@@ -39,7 +39,7 @@ public class RewardService: IRewardService
 
     public async Task CreateReward(RewardDetailsDto rewardDetailsDto)
     {
-        var map = _mapper.Map<Reward, RewardDetailsDto>(rewardDetailsDto);
+        var map = _mapper.Map<Reward>(rewardDetailsDto);
         await _unitOfWork.GetRepository<Reward>().AddAsync(map);
         _unitOfWork.SaveChanges();
     }

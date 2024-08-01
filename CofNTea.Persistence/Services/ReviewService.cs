@@ -1,7 +1,7 @@
+using AutoMapper;
 using CofNTea.Application;
 using CofNTea.Application.DTOs.ReviewDtos;
 using CofNTea.Application.Services;
-using CofNTea.Application.Utilities.AutoMapper;
 using CofNTea.Domain.Entities.Concretes;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +21,7 @@ public class ReviewService: IReviewService
     public async Task<IEnumerable<ReviewGetDto>> GetAllReviews()
     {
         var reviews =  await _unitOfWork.GetRepository<Review>().GetAllAsync();
-        var map = _mapper.Map<ReviewGetDto, Review>((IList<Review>)reviews);
+        var map = _mapper.Map<IList<ReviewGetDto>>(reviews);
         return map;
     }
 
@@ -31,7 +31,7 @@ public class ReviewService: IReviewService
         var review = await reviews.FirstOrDefaultAsync();
         if (review != null)
         {
-            var map = _mapper.Map<ReviewDetailsDto, Review>(review);
+            var map = _mapper.Map<ReviewDetailsDto>(review);
             return map;
         }
         return null;
@@ -39,7 +39,7 @@ public class ReviewService: IReviewService
 
     public async Task CreateReview(ReviewDetailsDto reviewDetailsDto)
     {
-        var map = _mapper.Map<Review, ReviewDetailsDto>(reviewDetailsDto);
+        var map = _mapper.Map<Review>(reviewDetailsDto);
         await _unitOfWork.GetRepository<Review>().AddAsync(map);
         _unitOfWork.SaveChanges();
     }

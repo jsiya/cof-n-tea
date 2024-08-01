@@ -1,7 +1,7 @@
+using AutoMapper;
 using CofNTea.Application;
 using CofNTea.Application.DTOs.PurchaseDtos;
 using CofNTea.Application.Services;
-using CofNTea.Application.Utilities.AutoMapper;
 using CofNTea.Domain.Entities.Concretes;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +21,7 @@ public class PurchaseService : IPurchaseService
     public async Task<IEnumerable<PurchaseGetDto>> GetAllPurchases()
     {
         var purchases = await _unitOfWork.GetRepository<Purchase>().GetAllAsync();
-        var map = _mapper.Map<PurchaseGetDto, Purchase>((IList<Purchase>)purchases);
+        var map = _mapper.Map<List<PurchaseGetDto>>(purchases);
         return map;
     }
 
@@ -31,7 +31,7 @@ public class PurchaseService : IPurchaseService
         var purchase = await purchases.FirstOrDefaultAsync();
         if (purchase != null)
         {
-            var map = _mapper.Map<PurchaseDetailsDto, Purchase>(purchase);
+            var map = _mapper.Map<PurchaseDetailsDto>(purchase);
             return map;
         }
 
@@ -40,7 +40,7 @@ public class PurchaseService : IPurchaseService
 
     public async Task CreatePurchase(PurchaseDetailsDto purchaseDetailsDto)
     {
-        var map = _mapper.Map<Purchase, PurchaseDetailsDto>(purchaseDetailsDto);
+        var map = _mapper.Map<Purchase>(purchaseDetailsDto);
         await _unitOfWork.GetRepository<Purchase>().AddAsync(map);
         _unitOfWork.SaveChanges();
     }

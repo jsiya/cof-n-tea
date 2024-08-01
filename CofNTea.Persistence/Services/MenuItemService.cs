@@ -1,7 +1,7 @@
+using AutoMapper;
 using CofNTea.Application;
 using CofNTea.Application.DTOs.MenuItemDtos;
 using CofNTea.Application.Services;
-using CofNTea.Application.Utilities.AutoMapper;
 using CofNTea.Domain.Entities.Concretes;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +21,7 @@ public class MenuItemService:IMenuItemService
     public async Task<IEnumerable<MenuItemGetDto>> GetAllMenuItems()
     {
         var menuItems =  await _unitOfWork.GetRepository<MenuItem>().GetAllAsync();
-        var map = _mapper.Map<MenuItemGetDto, MenuItem>((IList<MenuItem>)menuItems);
+        var map = _mapper.Map<IList<MenuItemGetDto>>(menuItems);
         return map;
     }
 
@@ -31,7 +31,7 @@ public class MenuItemService:IMenuItemService
         var menuItem = await menuItems.FirstOrDefaultAsync();
         if (menuItem != null)
         {
-            var map = _mapper.Map<MenuItemDetailsDto, MenuItem>(menuItem);
+            var map = _mapper.Map<MenuItemDetailsDto>(menuItem);
             return map;
         }
         return null;
@@ -39,7 +39,7 @@ public class MenuItemService:IMenuItemService
 
     public async Task CreateMenuItem(MenuItemDetailsDto menuItemDetailsDto)
     {
-        var map = _mapper.Map<MenuItem, MenuItemDetailsDto>(menuItemDetailsDto);
+        var map = _mapper.Map<MenuItem>(menuItemDetailsDto);
         await _unitOfWork.GetRepository<MenuItem>().AddAsync(map);
         _unitOfWork.SaveChanges();
     }

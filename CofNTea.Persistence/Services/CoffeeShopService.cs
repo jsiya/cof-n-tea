@@ -1,7 +1,7 @@
+using AutoMapper;
 using CofNTea.Application;
 using CofNTea.Application.DTOs.CoffeeShopDtos;
 using CofNTea.Application.Services;
-using CofNTea.Application.Utilities.AutoMapper;
 using CofNTea.Domain.Entities.Concretes;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,8 +20,8 @@ public class CoffeeShopService: ICoffeeShopService
 
     public async Task<IEnumerable<CoffeeShopGetDto>> GetAllCoffeeShops()
     {
-        var coffeeShops =  await _unitOfWork.GetRepository<CoffeeShop>().GetAllAsync();
-        var map = _mapper.Map<CoffeeShopGetDto, CoffeeShop>((IList<CoffeeShop>)coffeeShops);
+        var coffeeShops = await _unitOfWork.GetRepository<CoffeeShop>().GetByExpressionAsync(c => c.IsActive == true);
+        var map = _mapper.Map<List<CoffeeShopGetDto>>(coffeeShops);
         return map;
     }
 
@@ -31,7 +31,7 @@ public class CoffeeShopService: ICoffeeShopService
         var coffeeShop = await query.FirstOrDefaultAsync();
         if (coffeeShop != null)
         {
-            var map = _mapper.Map<CoffeeShopDetailsDto, CoffeeShop>(coffeeShop);
+            var map = _mapper.Map<CoffeeShopDetailsDto>(coffeeShop);
             return map;
         }
         return null;
@@ -39,7 +39,7 @@ public class CoffeeShopService: ICoffeeShopService
 
     public async Task CreateCoffeeShop(CoffeeShopDetailsDto coffeeShopDetailsDto)
     {
-        var map = _mapper.Map<CoffeeShop, CoffeeShopDetailsDto>(coffeeShopDetailsDto);
+        var map = _mapper.Map<CoffeeShop>(coffeeShopDetailsDto);
         await _unitOfWork.GetRepository<CoffeeShop>().AddAsync(map);
         _unitOfWork.SaveChanges();
     }
@@ -72,7 +72,7 @@ public class CoffeeShopService: ICoffeeShopService
         var coffeeShop = await query.FirstOrDefaultAsync();
         if (coffeeShop is not null)
         {
-            coffeeShop = _mapper.Map<CoffeeShop, CoffeeShopDetailsDto>(coffeeShopDetailsDto);
+            _mapper.Map(coffeeShopDetailsDto, coffeeShop);
             await _unitOfWork.GetRepository<CoffeeShop>().UpdateAsync(coffeeShop);
             _unitOfWork.SaveChanges();
         }
