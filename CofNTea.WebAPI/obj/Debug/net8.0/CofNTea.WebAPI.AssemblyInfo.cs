@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CofNTea.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e5241a86b014f483f43bb070b05aac60304ac52")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73c53d337276647b8340fcf1e16e1c2784b05a0f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CofNTea.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CofNTea.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

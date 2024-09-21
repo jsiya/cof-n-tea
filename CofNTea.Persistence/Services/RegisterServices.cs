@@ -34,6 +34,11 @@ public static class RegisterServices
         services.AddScoped<IReviewRepository, ReviewRepository>();
 
         services.AddScoped<ICoffeeShopService, CoffeeShopService>();
+        services.AddScoped<IMenuItemService, MenuItemService>();
+        services.AddScoped<IPurchaseService, PurchaseService>();
+        services.AddScoped<IPurchaseService, PurchaseService>();
+        services.AddScoped<IReviewService, ReviewService>();
+        services.AddScoped<IRewardService, RewardService>();
     }
     
 }

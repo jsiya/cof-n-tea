@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CofNTea.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c7f9a680edb77d1087f8dd4c6a6b4d0ad7d038a8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73c53d337276647b8340fcf1e16e1c2784b05a0f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CofNTea.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CofNTea.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

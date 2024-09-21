@@ -1,3 +1,4 @@
+using System.Net;
 using AutoMapper;
 using CofNTea.Application;
 using CofNTea.Application.DTOs.ReviewDtos;
@@ -20,7 +21,7 @@ public class ReviewService: IReviewService
 
     public async Task<IEnumerable<ReviewGetDto>> GetAllReviews()
     {
-        var reviews =  await _unitOfWork.GetRepository<Review>().GetAllAsync();
+        var reviews =  await _unitOfWork.GetRepository<Review>().GetByExpressionAsync(r => r.IsActive == true);
         var map = _mapper.Map<IList<ReviewGetDto>>(reviews);
         return map;
     }
@@ -37,14 +38,15 @@ public class ReviewService: IReviewService
         return null;
     }
 
-    public async Task CreateReview(ReviewDetailsDto reviewDetailsDto)
+    public async Task<HttpStatusCode> CreateReview(ReviewDetailsDto reviewDetailsDto)
     {
         var map = _mapper.Map<Review>(reviewDetailsDto);
         await _unitOfWork.GetRepository<Review>().AddAsync(map);
         _unitOfWork.SaveChanges();
+        throw new NotImplementedException();
     }
 
-    public async Task SoftDeleteReviewById(int reviewId)
+    public async Task<HttpStatusCode> SoftDeleteReviewById(int reviewId)
     {
         var query = await _unitOfWork.GetRepository<Review>().GetByExpressionAsync(c => c.Id == reviewId);
         var review = await query.FirstOrDefaultAsync();
@@ -53,9 +55,10 @@ public class ReviewService: IReviewService
             await _unitOfWork.GetRepository<Review>().SoftDeleteAsync(review);
             _unitOfWork.SaveChanges();
         }
+        throw new NotImplementedException();
     }
 
-    public async Task HardDeleteReviewById(int reviewId)
+    public async Task<HttpStatusCode> HardDeleteReviewById(int reviewId)
     {
         var query = await _unitOfWork.GetRepository<Review>().GetByExpressionAsync(c => c.Id == reviewId);
         var deletedItem = await query.FirstOrDefaultAsync();
@@ -64,9 +67,10 @@ public class ReviewService: IReviewService
             await _unitOfWork.GetRepository<Review>().HardDeleteAsync(deletedItem);
             _unitOfWork.SaveChanges();
         }
+        throw new NotImplementedException();
     }
 
-    public Task UpdateReview(Review review)
+    public Task<HttpStatusCode> UpdateReview(Review review)
     {
         throw new NotImplementedException();
     }

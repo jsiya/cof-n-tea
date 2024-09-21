@@ -1,3 +1,4 @@
+using System.Net;
 using AutoMapper;
 using CofNTea.Application;
 using CofNTea.Application.DTOs.RewardDtos;
@@ -20,7 +21,7 @@ public class RewardService: IRewardService
 
     public async Task<IEnumerable<RewardDetailsDto>> GetAllRewards()
     {
-        var rewards =  await _unitOfWork.GetRepository<Reward>().GetAllAsync();
+        var rewards =  await _unitOfWork.GetRepository<Reward>().GetByExpressionAsync(r => r.IsActive == true);
         var map = _mapper.Map<List<RewardDetailsDto>>(rewards);
         return map;
     }
@@ -37,14 +38,15 @@ public class RewardService: IRewardService
         return null;
     }
 
-    public async Task CreateReward(RewardDetailsDto rewardDetailsDto)
+    public async Task<HttpStatusCode> CreateReward(RewardDetailsDto rewardDetailsDto)
     {
         var map = _mapper.Map<Reward>(rewardDetailsDto);
         await _unitOfWork.GetRepository<Reward>().AddAsync(map);
         _unitOfWork.SaveChanges();
+        throw new NotImplementedException();
     }
 
-    public async Task SoftDeleteRewardById(int rewardId)
+    public async Task<HttpStatusCode> SoftDeleteRewardById(int rewardId)
     {
         var query = await _unitOfWork.GetRepository<Reward>().GetByExpressionAsync(c => c.Id == rewardId);
         var reward = await query.FirstOrDefaultAsync();
@@ -53,9 +55,10 @@ public class RewardService: IRewardService
             await _unitOfWork.GetRepository<Reward>().SoftDeleteAsync(reward);
             _unitOfWork.SaveChanges();
         }
+        throw new NotImplementedException();
     }
 
-    public async Task HardDeleteRewardById(int rewardId)
+    public async Task<HttpStatusCode> HardDeleteRewardById(int rewardId)
     {
         var query = await _unitOfWork.GetRepository<Reward>().GetByExpressionAsync(c => c.Id == rewardId);
         var deletedItem = await query.FirstOrDefaultAsync();
@@ -64,9 +67,10 @@ public class RewardService: IRewardService
             await _unitOfWork.GetRepository<Reward>().HardDeleteAsync(deletedItem);
             _unitOfWork.SaveChanges();
         }
+        throw new NotImplementedException();
     }
 
-    public Task UpdateReward(Reward reward)
+    public Task<HttpStatusCode> UpdateReward(Reward reward)
     {
         throw new NotImplementedException();
     }

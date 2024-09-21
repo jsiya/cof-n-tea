@@ -1,3 +1,4 @@
+using System.Net;
 using CofNTea.Application.DTOs.ReviewDtos;
 using CofNTea.Domain.Entities.Concretes;
 
@@ -7,8 +8,8 @@ public interface IReviewService
 {
     Task<IEnumerable<ReviewGetDto>> GetAllReviews();
     Task<ReviewDetailsDto> GetReviewById(int reviewId);
-    Task CreateReview(ReviewDetailsDto reviewDetailsDto);
-    Task SoftDeleteReviewById(int reviewId);
-    Task HardDeleteReviewById(int reviewId);
-    Task UpdateReview(Review review);
+    Task<HttpStatusCode> CreateReview(ReviewDetailsDto reviewDetailsDto);
+    Task<HttpStatusCode> SoftDeleteReviewById(int reviewId);
+    Task<HttpStatusCode> HardDeleteReviewById(int reviewId);
+    Task<HttpStatusCode> UpdateReview(Review review);
 }

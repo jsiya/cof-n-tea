@@ -1,3 +1,4 @@
+using System.Net;
 using AutoMapper;
 using CofNTea.Application;
 using CofNTea.Application.DTOs.CoffeeShopDtos;
@@ -37,44 +38,76 @@ public class CoffeeShopService: ICoffeeShopService
         return null;
     }
 
-    public async Task CreateCoffeeShop(CoffeeShopDetailsDto coffeeShopDetailsDto)
+    public async Task<HttpStatusCode> CreateCoffeeShop(CoffeeShopDetailsDto coffeeShopDetailsDto)
     {
-        var map = _mapper.Map<CoffeeShop>(coffeeShopDetailsDto);
-        await _unitOfWork.GetRepository<CoffeeShop>().AddAsync(map);
-        _unitOfWork.SaveChanges();
-    }
-
-    public async Task SoftDeleteCoffeeShopById(int coffeeShopId)
-    {
-        var query = await _unitOfWork.GetRepository<CoffeeShop>().GetByExpressionAsync(c => c.Id == coffeeShopId);
-        var coffeeShop = await query.FirstOrDefaultAsync();
-        if (coffeeShop != null)
+        try
         {
-            await _unitOfWork.GetRepository<CoffeeShop>().SoftDeleteAsync(coffeeShop);
+            var map = _mapper.Map<CoffeeShop>(coffeeShopDetailsDto);
+            await _unitOfWork.GetRepository<CoffeeShop>().AddAsync(map);
             _unitOfWork.SaveChanges();
+            return HttpStatusCode.OK;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return HttpStatusCode.UnprocessableEntity;
         }
     }
 
-    public async Task HardDeleteCoffeeShopById(int coffeeShopId)
+    public async Task<HttpStatusCode>  SoftDeleteCoffeeShopById(int coffeeShopId)
     {
-        var query = await _unitOfWork.GetRepository<CoffeeShop>().GetByExpressionAsync(c => c.Id == coffeeShopId);
-        var deletedItem = await query.FirstOrDefaultAsync();
-        if (deletedItem is not null)
+        try
         {
-            await _unitOfWork.GetRepository<CoffeeShop>().HardDeleteAsync(deletedItem);
-            _unitOfWork.SaveChanges();
+            var query = await _unitOfWork.GetRepository<CoffeeShop>().GetByExpressionAsync(c => c.Id == coffeeShopId);
+            var coffeeShop = await query.FirstOrDefaultAsync();
+            if (coffeeShop != null)
+            {
+                await _unitOfWork.GetRepository<CoffeeShop>().SoftDeleteAsync(coffeeShop);
+                _unitOfWork.SaveChanges();
+            }
+
+            return HttpStatusCode.OK;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return HttpStatusCode.UnprocessableEntity;
         }
     }
 
-    public async Task UpdateCoffeeShop(CoffeeShopDetailsDto coffeeShopDetailsDto, int id)
+    public async Task<HttpStatusCode>  HardDeleteCoffeeShopById(int coffeeShopId)
     {
-        var query = await _unitOfWork.GetRepository<CoffeeShop>().GetByExpressionAsync(c => c.Id == id);
+        try
+        {
+            var query = await _unitOfWork.GetRepository<CoffeeShop>().GetByExpressionAsync(c => c.Id == coffeeShopId);
+            var deletedItem = await query.FirstOrDefaultAsync();
+            if (deletedItem is not null)
+            {
+                await _unitOfWork.GetRepository<CoffeeShop>().HardDeleteAsync(deletedItem);
+                _unitOfWork.SaveChanges();
+            }
+
+            return HttpStatusCode.OK;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return HttpStatusCode.UnprocessableEntity;
+        }
+    }
+
+    public async Task<HttpStatusCode> UpdateCoffeeShop(CoffeeShopDetailsDto coffeeShopDetailsDto, int id)
+    {
+        var query = await _unitOfWork.GetRepository<CoffeeShop>().GetByExpressionAsync(c => c.Id == id && c.IsActive == true);
         var coffeeShop = await query.FirstOrDefaultAsync();
         if (coffeeShop is not null)
         {
             _mapper.Map(coffeeShopDetailsDto, coffeeShop);
             await _unitOfWork.GetRepository<CoffeeShop>().UpdateAsync(coffeeShop);
             _unitOfWork.SaveChanges();
+            return HttpStatusCode.OK;
         }
+
+        return HttpStatusCode.Forbidden;
     }
 }

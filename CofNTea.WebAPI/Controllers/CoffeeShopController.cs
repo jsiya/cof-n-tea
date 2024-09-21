@@ -1,3 +1,4 @@
+using System.Net;
 using CofNTea.Application.DTOs.CoffeeShopDtos;
 using CofNTea.Application.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -21,8 +22,9 @@ public class CoffeeShopController: ControllerBase
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
-        await _coffeeShopService.CreateCoffeeShop(coffeeShopVm);
-        return StatusCode(201);
+        if (await _coffeeShopService.CreateCoffeeShop(coffeeShopVm) == HttpStatusCode.OK)
+            return StatusCode(201);
+        return StatusCode(403);
     }
 
     [HttpGet("AllCoffeeShops")]
@@ -36,15 +38,17 @@ public class CoffeeShopController: ControllerBase
     [HttpDelete("DeleteCoffeeShopById/{id}")]
     public async Task<IActionResult> DeleteCoffeeShop(int id)
     {
-        await _coffeeShopService.SoftDeleteCoffeeShopById(id);
-        return StatusCode(204);
+        if(await _coffeeShopService.SoftDeleteCoffeeShopById(id) == HttpStatusCode.OK)
+            return StatusCode(204);
+        return StatusCode(400);
     }
 
     [HttpPut("UpdateCategoryById/{id}")]
     public async Task<IActionResult> UpdateCategoryById(int id, [FromBody] CoffeeShopDetailsDto coffeeShopDetailsDto)
     {
-        await _coffeeShopService.UpdateCoffeeShop(coffeeShopDetailsDto, id);
-        return Ok();
+        if (await _coffeeShopService.UpdateCoffeeShop(coffeeShopDetailsDto, id) == HttpStatusCode.OK)
+            return StatusCode(200);
+        return StatusCode(403);
     }
     
 }

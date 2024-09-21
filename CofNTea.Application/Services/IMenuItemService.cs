@@ -1,3 +1,4 @@
+using System.Net;
 using CofNTea.Application.DTOs.MenuItemDtos;
 using CofNTea.Domain.Entities.Concretes;
 
@@ -7,8 +8,8 @@ public interface IMenuItemService
 {
     Task<IEnumerable<MenuItemGetDto>> GetAllMenuItems();
     Task<MenuItemDetailsDto> GetMenuItemById(int menuItemId);
-    Task CreateMenuItem(MenuItemDetailsDto menuItemDetailsDto);
-    Task SoftDeleteMenuItemById(int menuItemId);
-    Task HardDeleteMenuItemById(int menuItemId);
-    Task UpdateMenuItem(MenuItem menuItem);
+    Task<HttpStatusCode> CreateMenuItem(MenuItemDetailsDto menuItemDetailsDto);
+    Task<HttpStatusCode> SoftDeleteMenuItemById(int menuItemId);
+    Task<HttpStatusCode> HardDeleteMenuItemById(int menuItemId);
+    Task<HttpStatusCode>  UpdateMenuItem(MenuItemDetailsDto menuItemDetailsDto, int id);
 }

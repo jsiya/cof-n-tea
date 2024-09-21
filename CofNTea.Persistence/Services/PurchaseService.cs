@@ -1,3 +1,4 @@
+using System.Net;
 using AutoMapper;
 using CofNTea.Application;
 using CofNTea.Application.DTOs.PurchaseDtos;
@@ -20,7 +21,7 @@ public class PurchaseService : IPurchaseService
 
     public async Task<IEnumerable<PurchaseGetDto>> GetAllPurchases()
     {
-        var purchases = await _unitOfWork.GetRepository<Purchase>().GetAllAsync();
+        var purchases = await _unitOfWork.GetRepository<Purchase>().GetByExpressionAsync(p => p.IsActive == true);
         var map = _mapper.Map<List<PurchaseGetDto>>(purchases);
         return map;
     }
@@ -38,14 +39,16 @@ public class PurchaseService : IPurchaseService
         return null;
     }
 
-    public async Task CreatePurchase(PurchaseDetailsDto purchaseDetailsDto)
+    public async Task<HttpStatusCode> CreatePurchase(PurchaseDetailsDto purchaseDetailsDto)
     {
         var map = _mapper.Map<Purchase>(purchaseDetailsDto);
         await _unitOfWork.GetRepository<Purchase>().AddAsync(map);
         _unitOfWork.SaveChanges();
+        
+        throw new NotImplementedException();
     }
 
-    public async Task SoftDeletePurchaseById(int purchaseId)
+    public async Task<HttpStatusCode> SoftDeletePurchaseById(int purchaseId)
     {
         var query = await _unitOfWork.GetRepository<Purchase>().GetByExpressionAsync(c => c.Id == purchaseId);
         var purchase = await query.FirstOrDefaultAsync();
@@ -54,9 +57,11 @@ public class PurchaseService : IPurchaseService
             await _unitOfWork.GetRepository<Purchase>().SoftDeleteAsync(purchase);
             _unitOfWork.SaveChanges();
         }
+        
+        throw new NotImplementedException();
     }
 
-    public async Task HardDeletePurchaseById(int purchaseId)
+    public async Task<HttpStatusCode> HardDeletePurchaseById(int purchaseId)
     {
         var query = await _unitOfWork.GetRepository<Purchase>().GetByExpressionAsync(c => c.Id == purchaseId);
         var deletedItem = await query.FirstOrDefaultAsync();
@@ -65,9 +70,11 @@ public class PurchaseService : IPurchaseService
             await _unitOfWork.GetRepository<Purchase>().HardDeleteAsync(deletedItem);
             _unitOfWork.SaveChanges();
         }
+        
+        throw new NotImplementedException();
     }
 
-    public Task UpdatePurchase(Purchase purchase)
+    public Task<HttpStatusCode> UpdatePurchase(Purchase purchase)
     {
         throw new NotImplementedException();
     }
